@@ -1,11 +1,23 @@
-/**
+/*
  * Program Description: 
- * 
- * Date:
- * 
+ * This program is a version of the famous game: Hangman.
+ * This program has 10 topics and  10 words in each topic.
+ * A random topic and word is chosen. The topic is displayed and
+ * the word is displayed with letters replaced with '-'.
+ * The user would have to guess a letter and the program would check if
+ * the letter was in the random word. 
+ * If yes:
+ * Replace the '-' with the letter in all the places
+ * If no:
+ * Deduct remaining guesses by 1.
+ * The game out end either when the number of remaining guesses becomes 0 or 
+ * the user guesses the word.
+ * The user is given an option to play again. If user chooses to play again,
+ * then the program starts again. Otherwise, the game ends.
+ *
+ * Start Date: October 30, 2020
+ * End Date: 
  */
-
-package hangman;
 
 // Importing Scanner
 import java.util.Scanner;
