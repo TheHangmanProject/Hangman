@@ -12,3 +12,6 @@ Done Parts of Pseudocode:
 
 - Declaring global array	-> topicsAndWords
 				-> lettersRemaining
+				
+- Methods			-> lineBreak();
+				-> 
