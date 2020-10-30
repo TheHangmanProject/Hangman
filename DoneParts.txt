@@ -14,4 +14,5 @@ Done Parts of Pseudocode:
 				-> lettersRemaining
 				
 - Methods			-> lineBreak();
+				-> choosingTopicAndWord();
 				-> 
