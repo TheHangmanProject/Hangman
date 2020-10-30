@@ -81,8 +81,14 @@ public class YHangman {
         // Printing an empty line
         System.out.println("");
     }
-    
-    public static void choosingTopicAndWord() {
+    /**
+     * Decription: 
+     * The method below is used to choose a random topic and a word
+     * Then prints out the topic and hyphens instead of the letters of the word
+     *
+     * @return ""       Returns empty string
+     */
+    public static String choosingTopicAndWord() {
         // An integer for the random row
         int randomNumRow = (int) Math.round(Math.random() * 9);
         
@@ -95,7 +101,7 @@ public class YHangman {
         // Printing out the topic
         System.out.println("Topic:\t\t\t\t" + topicsAndWords[randomNumRow][0]);
         
-        // Loop to print out the '-' instead of the letters of the word
+        // Loop to print out the '-'s instead of the letters of the word
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == ' ') {
                 System.out.print(" ");
@@ -103,7 +109,11 @@ public class YHangman {
                 System.out.print("-");
             }
         }
+        // Printing out a new line
         System.out.println(" ");
+        
+        // Returning an empty string
+        return "";
     }
     
 }
