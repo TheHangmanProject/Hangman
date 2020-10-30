@@ -1,0 +1,14 @@
+Done Parts of Pseudocode:
+
+- Importing Scanner
+
+- Declaring global integer 	-> guessesRemaining
+
+- Declaring global String 	-> invalid
+ 				-> wordToGuess
+				-> blankLines
+
+- Declaring global char		-> userLetter
+
+- Declaring global array	-> topicsAndWords
+				-> lettersRemaining
