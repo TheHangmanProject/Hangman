@@ -93,7 +93,7 @@ public class YHangman {
         wordToGuess = topicsAndWords[randomNumRow][randomNumCol];
         
         // Printing out the topic
-        System.out.println("Topic:\t\t\t\t" + topicsAndWord[randomNumRow]);
+        System.out.println("Topic:\t\t\t\t" + topicsAndWords[randomNumRow]);
         
         // Loop to print out the '-' instead of the letters of the word
         for (int i = 0; i < wordToGuess.length(); i++) {
