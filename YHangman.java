@@ -82,5 +82,28 @@ public class YHangman {
         System.out.println("");
     }
     
+    public static void choosingTopicAndWord() {
+        // An integer for the random row
+        int randomNumRow = (int) Math.round(Math.random() * 9);
+        
+        // An integer for the random column
+        int randomNumCol = (int) Math.round(Math.random() * 10);
+        
+        // Setting word to guess equal to the randomized word
+        wordToGuess = topicsAndWords[randomNumRow][randomNumCol];
+        
+        // Printing out the topic
+        System.out.println("Topic:\t\t\t\t" + topicsAndWord[randomNumRow]);
+        
+        // Loop to print out the '-' instead of the letters of the word
+        for (int i = 0; i < wordToGuess.length(); i++) {
+            if (wordToGuess.charAt(i) == ' ') {
+                System.out.print(" ");
+            } else {
+                System.out.print("-");
+            }
+        }
+        System.out.println(" ");
+    }
     
 }
