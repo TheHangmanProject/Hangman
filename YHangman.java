@@ -49,6 +49,10 @@ public class YHangman {
     // Includes 10 topics and 10 words
     public static String topicsAndWords[][] = new String[10][11];
     
+    // A global array for the letters remaining
+    // Initializing it to all the alphabets
+    public static String lettersRemaing[] = {"A", "B", "C", "D". "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+    
     /**
      * Description:
      * This method is used to create a line break 
