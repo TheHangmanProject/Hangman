@@ -116,4 +116,25 @@ public class YHangman {
         return "";
     }
     
+    public static void takingUserInput() {
+        // Instantiate the Scanner
+        Scanner userInput = new Scanner(System.in);
+        
+        // Temporary String for validating user input
+        String tempString;
+        
+        // Boolean to validate user input
+        boolean isValid = false;
+        
+        while (isValid == false) {
+            System.out.print("Enter a letter (! to guess the word):\t\t");
+            tempString = userInput.nextLine();
+            try {
+                
+            } catch (NumberFormatException e) {
+                System.out.println(invalid);
+            }
+        }
+    }
+    
 }
