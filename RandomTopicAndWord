@@ -1,0 +1,8 @@
+        int randCat = (int)Math.round(Math.random()*9);
+        int randWord = (int)Math.round(Math.random()*9+1);
+    
+        String catagory = wordBank[randCat][0];
+        String word = wordBank[randCat][randWord];
+    
+        System.out.println(catagory);
+        System.out.println(word);
