@@ -61,7 +61,7 @@ public class YHangman {
     
     // A global array for the letters remaining
     // Initializing it to all the alphabets
-    public static String lettersRemaing[] = {"A", "B", "C", "D". "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+    public static String lettersRemaing[] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     
     /**
      * Description:
