@@ -1,0 +1,199 @@
+Pseudocode for Hangman Project:
+
+Importing everything from java.util
+
+Declaring an integer for number of guesses:     NUM_GUESSES
+Declaring an integer for remaining guesses:     guessesRemaining
+Declaring a String for invalid response:        invalid  
+Declaring a String for an empty string:         EMPTY_STRING
+Declaring a String for word to guess:           wordToGuess
+Declaring a String for topic:                   topic
+Declaring a String for letters used:            lettersUsed
+Declaring a char for user letter:               userLetter
+Declaring a 2D array for topics and words:      topicsAndWords[][]
+Declaring an array for remaining letters:       remainingLetters[]
+Declaring a list for letters remaining:         remainingLettersList
+
+
+Method -> lineBreak:
+  An integer for number of times to print and set it equal to 70
+  For i < number of times:
+    Print: "="
+  end for-loop  
+  Printing a new line
+end-method  
+
+Method -> chooseTopicAndWord:
+  An integer for random number between 0 and 9:   randomNumRow
+  An integer for random number between 1 and 10:  randomNumCol
+  Setting wordToGuess equal to the randomized word (topicsAndWord[randomNumRow][randomNumCol])
+  Setting topic equal to randomized topic (topicsAndWord[randomNumRow][0])
+  Printing topic
+  Printing wordToGuess
+  For i < wordToGuess.length():
+    if wordToGuess.charAt(i) is equal to ' ':
+      blankLines = blankLines + " "
+    else:
+      blankLines = blankLines + "-"
+  end for-loop   
+  return blankLines
+end method
+
+Method -> takeUserInput:
+  Instantiate scanner
+  Temporary string for validating user input:     tempString
+  boolean to validate user input:                 isValid
+  while isValid is false:
+    Asking user for letter
+    Set tempString equal to user input after converting it to upper case
+    if tempString does not equal to EMPTY_STRING:
+      if character at 0 of tempString is !:
+        Ask for secret word
+        Set tempString equal to the word after converting it to upper case
+        Go to checkWord method -> passing tempString as the argument
+        Set isValid to true
+      else:
+        Set userLetter equal to character at 0th index of tempString
+        if character at 0th index of tempString is a letter:
+          boolean to check if user letter is in lettersRemainingList and setting it equal to false:     isRemaining
+          Using .contains to check if userLetter is a part of lettersRemainingList and setting it equal to isRemaining
+          if isRemaining is true:
+            an integer for the index of user letter:        indexOfLetter
+            if index is equal to -1:
+              Printing out that the letter is not a part of word
+              Decrementing guesses remaining by 1
+              if guessesRemaining is equal to 0:
+                Printing game over message
+                go to option to play again method
+                breaking loop
+              else: 
+                Setting lettersUsed to it and userLetter
+                Removing that letter from the list
+                go to line break method
+                Printing out the topic
+                Printing blankLines
+                Printing the remaining letters
+                Printing letters used
+                go to print guesses left
+          else:
+            Setting lettersUsed to it and userLetter
+            Removing that letter from the list
+            go to line break method
+            Printing out the topic
+            go to replaceBlanks -> indexOfLetter as argument
+            if blankLines is equal to wordToGuess:
+              Printing congratulations message
+              go to option to play again
+              breaking loop
+            else:
+              Printing the remaining letters
+              Printing lettersUsed
+              Printing guessesLeft
+        else:
+          Printing userLetter has been used
+          Line break
+          Printing out the topic
+          Printing blankLines
+          Printing out remaining letters
+          Printing out letters used
+          Printing guesses left
+          Taking user input
+      Set isValid to true
+      else:
+        Print invalid statement
+        Line break
+        Printing out the topic
+        Printing blankLines
+        Printing out remaining letters
+        Printing out letters used
+        Printing guesses left
+        Taking user input
+   else:
+    Printing invalid statement
+    Line break
+    Printing blankLines
+    Printing out remaining letters
+    Printing out letters used
+    Printing guesses left
+    Taking user input
+   go to takeUserInput method
+ Method end
+
+Method -> optionToPlayAgain:
+  Instantiate Scanner
+  Asking user if he / she wants to play again
+  Setting option equal to user input
+  Set optionChar equal to character at 0th index
+  if optionChar is a letter:
+    if optionChar is equal to Y:
+      go to reset method
+      go to game method
+    else if optionChar is equal to N:
+      go to end method
+    else:
+      Print invalid statement
+      go back to optionToPlayAgain method
+  else:
+    Print invalid statement
+    go back to option to play again method
+method end
+
+Method -> printRemainingLetters:
+  Printing remaining letters
+  For loop to print the letters in the lettersRemainingList
+  Printing a blank line
+Method end
+
+Method -> replaceBlanks -> parameter a character userLetter:
+  Replacing hyphen with userLetter
+  Loop to replace the hyphens with userLetter
+    If the character at i in wordToGuess is equal to userLetter
+      Then replace the character at i to i+1 with userLetter
+  End Loop
+  Adding blankLines to strBuff after converting it to String
+  returning blankLines
+Method end  
+  
+Method -> end:
+  Printing thank you message
+  Exiting the program
+Method end
+
+Method -> printGuessesLeft:
+  Printing guesses left
+  Go to line break method
+Method end
+
+Method -> printLettersused:
+  Printing letters used
+Method end
+
+Method -> checkWord -> parameter a String tempString:
+  if tempString is equal to wordToGuess:
+    Print congratulations message
+    Go to option to play again method
+  else:
+    Print incorrect message
+    Go to option to play again method
+Method end
+
+Method -> game:
+  Go to line break method
+  Printing choose topic and word method
+  Go to print remaining letters method
+  Go to print letters used method
+  Go to print guesses left
+  Go to take user input
+Method end
+
+Method -> reset:
+  Reset blankLines to an empty string
+  Reset lettersUsed 
+  Reset lettersRemaining
+  Reset guessesRemaining
+Method end
+
+Main method:
+  Print the title of the game
+  Go to game method
+Method end
