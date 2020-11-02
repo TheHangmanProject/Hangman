@@ -564,7 +564,7 @@ public class Hangman {
 	 */
 	public static void main(String[] args) {
 		// Print the title of the game
-		System.out.println("\t\tWELCOME TO HANGMAN!");
+		System.out.println("\t\t\tWELCOME TO HANGMAN!");
 		
 		// Go to game method
 		game();
