@@ -377,38 +377,49 @@ public class Hangman {
 		// Setting option equal to user input
 		String option = sc.nextLine().toUpperCase();
 
-		// Set optionChar equal to character at 0th index
-		char optionChar = option.charAt(0);
-
-		// if optionChar is a letter
-		if (Character.isLetter(optionChar)) {
-			// if optionChar is equal to Y
-			if (optionChar == 'Y') {
-				// go to reset method
-				reset();
-				
-				// go to game method
-				game();
-			}
-			// else if optionChar is equal to N
-			else if (optionChar == 'N') {
-				// go to end method
-				end();
+		// If option does not equal empty string
+		if (!option.equals(EMPTY_STRING)) {
+			// Set optionChar equal to character at 0th index
+			char optionChar = option.charAt(0);
+	
+			// if optionChar is a letter
+			if (Character.isLetter(optionChar)) {
+				// if optionChar is equal to Y
+				if (optionChar == 'Y') {
+					// go to reset method
+					reset();
+					
+					// go to game method
+					game();
+				}
+				// else if optionChar is equal to N
+				else if (optionChar == 'N') {
+					// go to end method
+					end();
+				}
+				// else
+				else {
+					// Print invalid statement
+					System.out.println(invalid);
+	
+					// go back to optionToPlayAgain method
+					optionToPlayAgain();
+				}
 			}
 			// else
 			else {
 				// Print invalid statement
 				System.out.println(invalid);
-
-				// go back to optionToPlayAgain method
+	
+				// go back to option to play again method
 				optionToPlayAgain();
 			}
-		}
+		} 
 		// else
 		else {
 			// Print invalid statement
 			System.out.println(invalid);
-
+			
 			// go back to option to play again method
 			optionToPlayAgain();
 		}
