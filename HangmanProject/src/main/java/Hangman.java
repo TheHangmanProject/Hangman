@@ -29,10 +29,10 @@ import java.util.*;
 
 public class Hangman {
 	// Constant for number of guesses
-	public static int NUM_GUESSES = 6;
+	public static final int NUM_GUESSES = 6;
 	
 	// Constant for empty string
-	public static String EMPTY_STRING = "";
+	public static final String EMPTY_STRING = "";
 	
 	// A global string for invalid response
 	public static String invalid = "Invalid response";
